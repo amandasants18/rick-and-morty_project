@@ -1,14 +1,15 @@
 import React from "react";
-import { Content } from "../Cards/Cards.styles";
+import { ContentImage } from "./CardDetails.styles";
 import { Image } from "../Cards/Cards.styles";
-import { ContentDetails, ContentNameDetails, DivPai, DivPaiDetails, GenderDetails, SpeciesDetails, StatusDetails } from "./CardDetails.styles";
+import { ContentDetails, ContentNameDetails, DivDetails, GenderDetails, SpeciesDetails, StatusDetails } from "./CardDetails.styles";
 
 const CardDetails = ({ details }) => {
   const { image } = details;
   return (
-    <DivPaiDetails>
+    <DivDetails>
       <ContentDetails>
-        <Image src={image} />
+        <ContentImage> <Image src={image} /></ContentImage>
+       
         <ContentNameDetails>{details.name}</ContentNameDetails>
         <GenderDetails>Gender: {details.gender}</GenderDetails>
         <StatusDetails status={details.status}>Status: {details.status}</StatusDetails>
@@ -16,7 +17,7 @@ const CardDetails = ({ details }) => {
         <SpeciesDetails>Species: {details.species}</SpeciesDetails>
   
       </ContentDetails>
-    </DivPaiDetails>
+    </DivDetails>
   );
 };
 

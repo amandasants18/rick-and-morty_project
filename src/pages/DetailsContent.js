@@ -1,6 +1,5 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { api, getCharacterById } from "../services/api";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import CardDetails from "../components/CardDetails/CardDetails";
@@ -12,7 +11,6 @@ export const DetailsContent = () => {
 
   const id = location.state.name;
 
-  const {image} = details
   useEffect(() => {
     const data = async () => {
       axios
@@ -21,13 +19,9 @@ export const DetailsContent = () => {
         .catch((err) => console.log(err));
     };
     data();
-
-
   }, []);
 
-  useEffect(()=>{
+  useEffect(() => {}, [details]);
 
-  }, [details])
-
-  return <CardDetails details={details}/>
+  return <CardDetails details={details} />;
 };

@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import Cards from "../components/Cards/Cards";
 import Search from "../components/Search/Search";
 import Pagination from "../components/Pagination/Pagination";
-import Filters from "../components/Filters/Filters";
 
 const Home = () => {
   let [pageNumber, setPageNumber] = useState(1);
   let [fetchedData, setFetchedData] = useState([]);
   let [searchCharacter, setSearchCharacter] = useState("");
+
   let { info, results } = fetchedData;
 
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${searchCharacter}`;
@@ -22,23 +22,27 @@ const Home = () => {
   return (
     <div>
       <h1 className="title">Rick & Morty</h1>
-      <div><Search
-        setPageNumber={setPageNumber}
-        setSearchCharacter={setSearchCharacter}
-      ></Search></div>
-      
-      <div><Cards results={results}></Cards>
-</div>
-      
-      <div><Pagination
-        info={info}
-        pageNumber={pageNumber}
-        setPageNumber={setPageNumber}
-      ></Pagination></div>
-      <div><Filters></Filters></div>
+      <div>
+        <Search
+          setPageNumber={setPageNumber}
+          setSearchCharacter={setSearchCharacter}
+        ></Search>
       </div>
-    
-  
+
+      <div>
+        <div>
+          <Cards results={results}></Cards>
+        </div>
+      </div>
+
+      <div>
+        <Pagination
+          info={info}
+          pageNumber={pageNumber}
+          setPageNumber={setPageNumber}
+        ></Pagination>
+      </div>
+    </div>
   );
 };
 

@@ -3,10 +3,8 @@
 O projeto consiste em uma tela de listagem de personagens com busca e uma tela de detalhes que deve conter a maior quantidade possível de informações.
 ## Available Scripts
 
-In the project directory, you can run:
 
-
-### Tecnologias utilizadas: JavaScript, React.
+### Tecnologias utilizadas: JavaScript, React(Framework).
 - Styled-components para estilizar os componentes.
 - React router dom para realizar o gerenciamento de rotas.
 - Axios para realizar o consumo da api.
